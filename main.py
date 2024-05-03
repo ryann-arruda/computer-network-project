@@ -28,7 +28,11 @@ if __name__ == '__main__':
                 print(format_received_message(client_socket.recv(1024)))
                 
             if option == 2:
-                print("opção 2")
+                client_socket.sendall(create_request(bitarray('0001')))
+
+                print("Resposta do servidor: ", end='')
+                print(format_received_message(client_socket.recv(1024)))
+
             if option == 3:
                 print("opção 3")  
         except ConnectionError:
