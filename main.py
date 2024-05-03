@@ -34,7 +34,11 @@ if __name__ == '__main__':
                 print(format_received_message(client_socket.recv(1024)))
 
             if option == 3:
-                print("opção 3")  
+                client_socket.sendall(create_request(bitarray('0010')))
+
+                print("Resposta do servidor: ", end='')
+                print(format_received_message(client_socket.recv(1024), False))
+
         except ConnectionError:
             print("Conexão com o servidor foi perdida!")
             break
