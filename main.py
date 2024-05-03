@@ -1,6 +1,7 @@
 import socket
 from bitarray import bitarray
 from request_generator import create_request
+from text_formatter import format_received_message
 
 if __name__ == '__main__':
 
@@ -23,17 +24,17 @@ if __name__ == '__main__':
             if option == 1:
                 client_socket.sendall(create_request(bitarray('0000')))
 
-                data_received = b''
-
-                data_received += client_socket.recv(1024)
-                print(str(data_received))
-                print(data_received.decode(errors='replace'))
+                print("Resposta do servidor: ", end='')
+                print(format_received_message(client_socket.recv(1024)))
                 
             if option == 2:
                 print("opção 2")
             if option == 3:
                 print("opção 3")  
-        finally:
-            print("Erro ao enviar a mensagem! Tente novamente.")
+        except ConnectionError:
+            print("Conexão com o servidor foi perdida!")
+            break
+        except socket.timeout:
+            print("Tempo máximo espera atingido, tente noamente!")
     
     client_socket.close()
