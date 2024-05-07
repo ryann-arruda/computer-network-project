@@ -7,7 +7,6 @@ from raw_utility import generate_udp_header, get_free_port
 if __name__ == '__main__':
     dest_ip = '15.228.191.109'
     dest_port = 50000
-    source_port = get_free_port()
 
     raw_client_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_UDP)
 
@@ -21,6 +20,7 @@ if __name__ == '__main__':
         print("4 - Sair")
 
         option = int(input("Digite a opção desejada: "))
+        source_port = get_free_port()
 
         try:
             if option == 1:
