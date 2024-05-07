@@ -1,3 +1,4 @@
+#Equipe: Alexandre Bezerra de Lima, Ryann Carlos de Arruda Quintino, Victor Henrique Felix Brasil 
 import socket
 from bitarray import bitarray
 from request_generator import create_request

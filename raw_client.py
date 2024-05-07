@@ -1,7 +1,8 @@
+#Equipe: Alexandre Bezerra de Lima, Ryann Carlos de Arruda Quintino, Victor Henrique Felix Brasil 
 import socket
 from bitarray import bitarray
 from request_generator import create_request
-from text_formatter import format_received_message, format_received_message_from_socket_raw
+from text_formatter import format_received_message_from_socket_raw
 from raw_utility import generate_udp_header, get_free_port
 
 if __name__ == '__main__':
