@@ -123,7 +123,7 @@ Therefore, considering all the information previously presented, the checksum ca
 The result of the above summation is 41F48. In order to perform the wraparound in one go to make the result of the sum a 2-byte number, one can consider this result as the 32-bit number 0x00041F48 and sum the most significant 16 bis with the 16 bits least significant, i.e. 0x0004 + 0x1F48, which will produce the result **1F4C**. The checksum will be the 1's complement of **1F4C**, which is E0B3, as can be seen in the binary representation below.
 
 <div style="text-align:center;">
-    <strong><span style="padding-right: 28px">1</span> <span style="padding-right: 28px">F</span><span style="padding-right: 28px">4</span>C</strong>
+    <strong><span style="padding-right: 28px;">1</span> <span style="padding-right: 28px;">F</span><span style="padding-right: 28px;">4</span>C</strong>
     
     0001 1111 0100 1100
 
@@ -132,7 +132,7 @@ The result of the above summation is 41F48. In order to perform the wraparound i
     1110 0000 1011 0011
 </div>
 <div style="text-align:center;">
-    <strong><span style="padding-right: 28px">E</span> <span style="padding-right: 28px">0</span><span style="padding-right: 28px">B</span>3</strong>
+    <strong><span style="padding-right: 28px;">E</span> <span style="padding-right: 28px;">0</span><span style="padding-right: 28px;">B</span>3</strong>
 </div>
 
 ## Authors
