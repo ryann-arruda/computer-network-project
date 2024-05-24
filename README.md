@@ -114,11 +114,11 @@ The Pseudo IP header has the following structure.
 
 Therefore, considering all the information previously presented, the checksum calculation is given by:
 
-<span style="color: red;">0xC0A8 + 0x0169 + 0x0FE4 + 0xBF6D + 0x0011 + 0x000B + </span><span style="color: green;">0xE713 + 0xC350 + 0x000B + 0x0000 + </span><span style="color: blue;">0x025C + 0xE100</span>
+![img](https://github.com/ryann-arruda/computer-network-project/assets/53544629/9d02d24d-a955-4038-9045-490c64b865aa)
 
-* <span style="color:red;">In red: set of 2 bytes of the Pseudo IP Header</span>
-* <span style="color:green;">In green: set of 2 bytes of the UDP header</span>
-* <span style="color:blue;">In blue: set of 2 bytes of UDP payload (byte 00 was added to the last payload byte so that all sets in the sum have 2 bytes)</span>
+* In red: set of 2 bytes of the Pseudo IP Header;
+* In green: set of 2 bytes of the UDP header;
+* In blue: set of 2 bytes of UDP payload (byte 00 was added to the last payload byte so that all sets in the sum have 2 bytes).
 
 The result of the above summation is 41F48. In order to perform the wraparound in one go to make the result of the sum a 2-byte number, one can consider this result as the 32-bit number 0x00041F48 and sum the most significant 16 bis with the 16 bits least significant, i.e. 0x0004 + 0x1F48, which will produce the result **1F4C**. The checksum will be the 1's complement of **1F4C**, which is E0B3, as can be seen in the binary representation below.
 
