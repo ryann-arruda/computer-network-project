@@ -114,7 +114,7 @@ The Pseudo IP header has the following structure.
 
 Therefore, considering all the information previously presented, the checksum calculation is given by:
 
-<span style="color:red;">0xC0A8 + 0x0169 + 0x0FE4 + 0xBF6D + 0x0011 + 0x000B + </span><span style="color:green;">0xE713 + 0xC350 + 0x000B + 0x0000 + </span><span style="color:blue;">0x025C + 0xE100</span>
+<p><span style="color:red;">0xC0A8 + 0x0169 + 0x0FE4 + 0xBF6D + 0x0011 + 0x000B + </span><span style="color:green;">0xE713 + 0xC350 + 0x000B + 0x0000 + </span><span style="color:blue;">0x025C + 0xE100</span></p>
 
 * <span style="color:red;">In red: set of 2 bytes of the Pseudo IP Header</span>
 * <span style="color:green;">In green: set of 2 bytes of the UDP header</span>
