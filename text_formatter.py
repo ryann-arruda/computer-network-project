@@ -1,3 +1,4 @@
+#Equipe: Alexandre Bezerra de Lima, Ryann Carlos de Arruda Quintino, Victor Henrique Felix Brasil 
 def format_received_message(data_received, is_text=True):
     processed_message = b''
     processed_message += data_received

@@ -1,3 +1,4 @@
+#Equipe: Alexandre Bezerra de Lima, Ryann Carlos de Arruda Quintino, Victor Henrique Felix Brasil 
 from bitarray import bitarray
 from random import randint
 

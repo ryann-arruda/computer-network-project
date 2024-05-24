@@ -1,3 +1,4 @@
+#Equipe: Alexandre Bezerra de Lima, Ryann Carlos de Arruda Quintino, Victor Henrique Felix Brasil 
 import socket
 from bitarray import bitarray
 from request_generator import create_request
@@ -6,8 +7,6 @@ from text_formatter import format_received_message
 if __name__ == '__main__':
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    server_address = ('15.228.191.109', 50000)
-    client_socket.connect(server_address)
 
     option = -1
 
@@ -22,27 +21,30 @@ if __name__ == '__main__':
 
         try:
             if option == 1:
-                client_socket.sendall(create_request(bitarray('0000')))
+                client_socket.sendto(create_request(bitarray('0000')),('15.228.191.109', 50000))
 
                 print("Resposta do servidor: ", end='')
-                print(format_received_message(client_socket.recv(1024)))
+                message, _ = client_socket.recvfrom(2048)
+                print(format_received_message(message))
                 
             if option == 2:
-                client_socket.sendall(create_request(bitarray('0001')))
+                client_socket.sendto(create_request(bitarray('0001')), ('15.228.191.109', 50000))
 
                 print("Resposta do servidor: ", end='')
-                print(format_received_message(client_socket.recv(1024)))
+                message, _ = client_socket.recvfrom(2048)
+                print(format_received_message(message))
 
             if option == 3:
-                client_socket.sendall(create_request(bitarray('0010')))
+                client_socket.sendto(create_request(bitarray('0010')), ('15.228.191.109', 50000))
 
                 print("Resposta do servidor: ", end='')
-                print(format_received_message(client_socket.recv(1024), False))
+                message, _ = client_socket.recvfrom(2048)
+                print(format_received_message(message, False))
 
         except ConnectionError:
             print("Conexão com o servidor foi perdida!")
             break
         except socket.timeout:
-            print("Tempo máximo espera atingido, tente noamente!")
+            print("Tempo máximo espera atingido, tente novamente!")
     
     client_socket.close()
